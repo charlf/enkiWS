@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>{{ _( "Change email" ) }}</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            <div class="well bs-component">
+                <form class="form-horizontal" action="{{ 'emailchange'|local }}" method="post">
+                    <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                    <fieldset>
+
+                        <legend>{{ _( "Change email" ) }}</legend>
+
+                        <div class="form-group {% if error %}has-error{% endif%}">
+                            <label for="email" class="col-lg-2 control-label">{{ _( "New email" ) }}</label>
+                             <div class="col-lg-10">
+                                 <input class="form-control" type="text" name="email" placeholder="{{ _( "New email" ) }}" value = "{{ email }}"/>
+                                 {% if error %}<label class="control-label">{{ error }}</label>{% endif%}
+                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button class="btn btn-primary" type="submit">{{ _( "Change email" ) }}</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

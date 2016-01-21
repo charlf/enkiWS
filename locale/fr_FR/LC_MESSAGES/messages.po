@@ -1,0 +1,1254 @@
+# French (France) translations for PROJECT.
+# Copyright (C) 2015 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2016-01-21 15:03+0000\n"
+"PO-Revision-Date: 2015-12-14 20:07+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr_FR\n"
+"Language-Team: fr_FR <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.1.1\n"
+
+#: enki/textmessages.py:7
+msgid "Success"
+msgstr "Succès"
+
+#: enki/textmessages.py:8
+msgid "Information"
+msgstr "Information"
+
+#: enki/textmessages.py:9
+msgid "Warning"
+msgstr "Attention"
+
+#: enki/textmessages.py:11
+msgid "You are logged out."
+msgstr "Vous êtes déconnecté.e."
+
+#: enki/textmessages.py:12
+msgid "Please log in to access the page you requested."
+msgstr "Veuillez vous connecter afin d'accéder à la page demandée."
+
+#: enki/textmessages.py:13
+msgid "You are logged in."
+msgstr "Vous êtes connecté.e."
+
+#: enki/textmessages.py:15
+msgid "Sign up aborted."
+msgstr "La création de votre compte a été interrompue."
+
+#: enki/textmessages.py:16
+#, python-format
+msgid ""
+"If email address %(email)s is available, a registration email was sent to"
+" it. Please check your inbox and follow the instructions in the email to "
+"<b>confirm your registration</b>."
+msgstr ""
+"Si l'adresse %(email)s est disponible, un courrier électronique a été "
+"envoyé. Veuillez vous rendre sur votre compte de messagerie et suivre les"
+" instructions contenues dans le message afin de finaliser la création de "
+"votre compte utilisateur."
+
+#: enki/textmessages.py:17
+msgid "Your account is created."
+msgstr "Votre compte est créé."
+
+#: enki/textmessages.py:19
+#, python-format
+msgid "Login with %(provider)s failed, please try again."
+msgstr ""
+"Votre authentification par l'intermédiare de %(provider)s a échoué. "
+"Veuillez renouveler votre tentative."
+
+#: enki/textmessages.py:20
+#, python-format
+msgid ""
+"If email address %(email)s is available, an email was sent to it. Please "
+"check your inbox and follow the instructions in the email to <b>add it to"
+" your account</b>."
+msgstr ""
+"Si l'adresse %(email)s est disponible, un courrier électronique a été "
+"envoyé. Veuillez vous rendre sur votre compte de messagerie et suivre les"
+" instructions contenues dans le message afin d'ajouter l'adresse à votre "
+"compte."
+
+#: enki/textmessages.py:22
+msgid "Your account is deleted."
+msgstr "Votre compte est supprimé."
+
+#: enki/textmessages.py:23
+#, python-format
+msgid ""
+"An email was sent to your email address %(email)s. Please check your "
+"inbox and follow the instructions in the email to delete your account."
+msgstr ""
+"Un courrier électronique a été envoyé à l'adresse %(email)s. Veuillez "
+"vous rendre sur votre compte de messagerie et suivre les instructions "
+"contenues dans le message afin de supprimer votre compte."
+
+#: enki/textmessages.py:24
+msgid "Your account and forum posts are deleted"
+msgstr ""
+"Votre compte et les messages que vous avez publié dans le forum sont "
+"supprimés."
+
+#: enki/textmessages.py:25
+#, python-format
+msgid ""
+"An email was sent to your email address %(email)s. Please check your "
+"inbox and follow the instructions in the email to delete your account and"
+" forum posts."
+msgstr ""
+"Un courrier électronique a été envoyé à l'adresse %(email)s. Veuillez "
+"vous rendre sur votre compte de messagerie et suivre les instructions "
+"contenues dans le message afin de supprimer votre compte ainsi que les "
+"messages que vous avez publié dans le forum."
+
+#: enki/textmessages.py:27
+msgid "Your email address is set."
+msgstr "Votre adresse de courrier électronique est enregistrée."
+
+#: enki/textmessages.py:28
+msgid "Your email is removed."
+msgstr "Votre adresse de courrier électronique est retirée de notre système."
+
+#: enki/textmessages.py:29
+msgid "Your email address is restored."
+msgstr "Votre adresse de courrier électronique est rétablie."
+
+#: enki/textmessages.py:30
+msgid ""
+"An email was sent to your previous address in case you want to "
+"<b>undo</b> the change."
+msgstr ""
+"Un courrier électronique a été envoyé à votre adresse précédente. "
+"Veuillez vous rendre sur votre compte de messagerie et suivre les "
+"instructions contenues dans le message afin de rétablir l'adresse."
+
+#: enki/textmessages.py:31
+#, python-format
+msgid ""
+"If email address %(email)s is available, an email was sent to it. Please "
+"check your inbox and follow the instructions in the message to "
+"<b>confirm</b> the change."
+msgstr ""
+"Si l'adresse %(email)s est disponible, un courrier électronique a été "
+"envoyé. Veuillez vous rendre sur votre compte de messagerie et suivre les"
+" instructions contenues dans le message afin de <b>confirmer</b> le "
+"changement d'adresse."
+
+#: enki/textmessages.py:32
+msgid ""
+"An email was sent to your current address in case you want to <b>undo</b>"
+" the change."
+msgstr ""
+"Un courrier électronique a été envoyé à votre adresse actuelle. Veuillez "
+"vous rendre sur votre compte de messagerie et suivre les instructions "
+"contenues dans le message afin d'<b>annuler</b> le changement d'adresse."
+
+#: enki/textmessages.py:34
+#, python-format
+msgid "%(provider)s authentication method removed."
+msgstr ""
+"Votre méthode d'authentification par l'intermédiaire de %(provider)s est "
+"supprimée."
+
+#: enki/textmessages.py:36
+msgid "Your password is updated."
+msgstr "Votre mot de passe est modifié."
+
+#: enki/textmessages.py:37
+msgid "Your password is set."
+msgstr "Votre mot de passe est enregistré."
+
+#: enki/textmessages.py:38
+#, python-format
+msgid ""
+"If email address %(email)s matches an existing account, an email was sent"
+" to it. Please check your inbox and follow the instructions in the email "
+"to reset you password."
+msgstr ""
+"Si l'adresse %(email)s est disponible, un courrier électronique a été "
+"envoyé. Veuillez vous rendre sur votre compte de messagerie et suivre les"
+" instructions contenues dans le message afin de réinitialiser votre mot "
+"de passe."
+
+#: enki/textmessages.py:40
+msgid "Please set your display name to continue."
+msgstr "Veuillez créer votre nom d'affichage."
+
+#: enki/textmessages.py:41
+msgid "Your display name is set."
+msgstr "Votre nom d'affichage est enregistré."
+
+#: enki/textmessages.py:43
+msgid "Your thread is published."
+msgstr "Votre sujet est publié dans le forum."
+
+#: enki/textmessages.py:44
+msgid "Your post is published."
+msgstr "Votre message est publié dans le forum."
+
+#: enki/textmessages.py:45
+msgid "Your post is modified."
+msgstr "Votre message de forum est modifié."
+
+#: enki/textmessages.py:46
+msgid "Your post is deleted."
+msgstr "Votre message de forum est supprimé."
+
+#: enki/textmessages.py:49
+msgid "Wrong email or password."
+msgstr "Adresse électronique ou mot de passe erroné.e."
+
+#: enki/textmessages.py:50
+msgid "Invalid password."
+msgstr "Adresse électronique ou mot de passe erroné.e."
+
+#: enki/textmessages.py:51
+#, python-format
+msgid ""
+"You have attempted to log in too many times. Please wait %(timeout)s "
+"before you try again."
+msgstr ""
+"Vous avez tenté de vous connecter sans succès de trop nombreuses fois. "
+"Merci d'attendre %(timeout)s avant de recommencer."
+
+#: enki/textmessages.py:52
+msgid "Invalid email address format."
+msgstr "Le format de votre adresse de courrier électronique est incorrect."
+
+#: enki/textmessages.py:53
+msgid "An email address is needed."
+msgstr "Une adresse de courrier électronique est nécessaire."
+
+#: enki/textmessages.py:54
+msgid "A password is needed."
+msgstr "Un mot de passe est nécessaire."
+
+#: enki/textmessages.py:55
+msgid "Please enter your new password."
+msgstr "Veuiller entrer votre nouveau mot de passe"
+
+#: enki/textmessages.py:56
+msgid "User creation failed, please retry."
+msgstr ""
+"La création de votre compte utilisateur a échoué. Veuillez renouveler "
+"votre tentative."
+
+#: enki/textmessages.py:57
+#, python-format
+msgid "Your password is %(length)s character long: it is too short."
+msgid_plural "Your password is %(length)s characters long: it is too short."
+msgstr[0] "Votre mot de passe contient %(length)s charactère : il est trop court."
+msgstr[1] "Votre mot de passe contient %(length)s charactères : il est trop court."
+
+#: enki/textmessages.py:58
+#, python-format
+msgid "Please ensure your password is at least %(length)s character long."
+msgid_plural "Please ensure your password is at least %(length)s characters long."
+msgstr[0] ""
+"Veuillez vous assurer que la longueur de votre mot de passe excède "
+"%(length)s charactère."
+msgstr[1] ""
+"Veuillez vous assurer que la longueur de votre mot de passe excède "
+"%(length)s charactères."
+
+#: enki/textmessages.py:59
+msgid "This is your current email."
+msgstr ""
+
+#: enki/textmessages.py:60
+msgid ""
+"You cannot delete your email address: you need an email address to "
+"connect to your account."
+msgstr ""
+"Vous devez entrer une adresse électronique : cela est nécessaire pour "
+"pouvoir vous connecter à votre compte."
+
+#: enki/textmessages.py:62
+msgid "second"
+msgid_plural "seconds"
+msgstr[0] "seconde"
+msgstr[1] "secondes"
+
+#: enki/textmessages.py:63
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "minute"
+msgstr[1] "minutes"
+
+#: enki/textmessages.py:64
+msgid "hour"
+msgid_plural "hours"
+msgstr[0] "heure"
+msgstr[1] "heures"
+
+#: enki/textmessages.py:65
+msgid "day"
+msgid_plural "days"
+msgstr[0] "jour"
+msgstr[1] "jours"
+
+#: enki/textmessages.py:68
+msgid "Attempt to log in with your email"
+msgstr "Tentative de connexion"
+
+#: enki/textmessages.py:69
+#, python-format
+msgid ""
+"An attempt was made to log in to your account using this email address. "
+"If you'd like to use your email to log in, you need to set a password for"
+" it: %(link)s (click or copy and paste in your browser)"
+msgstr ""
+"Une tentative de connexion à votre compte a été détectée. Si vous désirez"
+" utiliser votre adresse de courrier électronique pour vous connecter, "
+"vous devez d'abord créer un mot de passe: %(link)s (cliquez ou copiez-"
+"collez le lien dans votre navigateur)."
+
+#: enki/textmessages.py:70
+msgid "Attempt to register with your email"
+msgstr "Tentative de connexion"
+
+#: enki/textmessages.py:71
+#, python-format
+msgid ""
+"An attempt was made to sign up to your account. If you've forgotten your "
+"password, you can reset it: %(link)s (click or copy and paste in your "
+"browser)"
+msgstr ""
+"Une tentative de connexion à votre compte a été détectée. Si vous avez "
+"oublié votre mot de passe, vous pouvez le réinitialiser : %(link)s "
+"(cliquez ou copiez-collez le lien dans votre navigateur)."
+
+#: enki/textmessages.py:72 templates/registerconfirm.html:6
+msgid "Registration confirmation"
+msgstr "Confirmation de la création de votre compte"
+
+#: enki/textmessages.py:73
+#, python-format
+msgid ""
+"Follow this link to confirm your registration: %(link)s (click or copy "
+"and paste in your browser)"
+msgstr ""
+"Suivez ce lien pour confirmer la création de votre compte utilisateur : "
+"%(link)s (cliquez ou copiez-collez le lien dans votre navigateur)."
+
+#: enki/textmessages.py:74
+msgid "Confirm new email"
+msgstr "Confirmation de votre nouvelle adresse de courrier électronique"
+
+#: enki/textmessages.py:75
+#, python-format
+msgid ""
+"A request to change the email address linked to your account was made. "
+"Follow this link to confirm the change to address %(email)s: %(link)s "
+"(click or copy and paste in your browser)"
+msgstr ""
+"Vous avez demandé de changer l'adresse de courrier électronique associée "
+"à votre compte. Suivez ce lien pour confirmer votre nouvelle adresse "
+"%(email)s : %(link)s (cliquez ou copiez-collez le lien dans votre "
+"navigateur)."
+
+#: enki/textmessages.py:76
+msgid "Undo change email"
+msgstr "Annuler le changement d'adresse de courrier électronique"
+
+#: enki/textmessages.py:77
+#, python-format
+msgid ""
+"A request to change the email address linked to your account was made. "
+"Follow this link to cancel the change and ensure the current address "
+"%(email)s remains linked to your account: %(link)s (click or copy and "
+"paste in your browser)"
+msgstr ""
+"Vous avez demandé de changer l'adresse de courrier électronique associée "
+"à votre compte. Suivez ce lien pour annuler le changement et conserver "
+"l'adresse %(email)s : %(link)s (cliquez ou copiez-collez le lien dans "
+"votre navigateur)."
+
+#: enki/textmessages.py:78
+msgid "Password reset"
+msgstr "Nouveau mot de passe."
+
+#: enki/textmessages.py:79
+#, python-format
+msgid ""
+"A request to reset your password was made. Follow this link to reset your"
+" password and set a new one: %(link)s (click or copy and paste in your "
+"browser)"
+msgstr ""
+"Vous avez demandé de changer votre mot de passe. Suivez ce lien pour "
+"réinitialiser votre mot de passe et en entrer un nouveau : %(link)s "
+"(cliquez ou copiez-collez le lien dans votre navigateur)."
+
+#: enki/textmessages.py:80
+msgid "New authentication"
+msgstr "Nouvelle méthode d'authentification"
+
+#: enki/textmessages.py:81
+#, python-format
+msgid ""
+"A new authentication method has been added: you can now log in using "
+"%(provname)s. (If you do not remember logging in using %(provname)s, your"
+" %(provname)s account - Id %(provuid)s may have been be compromised. In "
+"addition, you should log in to your account profile and remove the "
+"%(provname)s authentication method. %(link)s (click or copy and paste in "
+"your browser)"
+msgstr ""
+"Vous avez ajouté une nouvelle méthode d'authentification à votre compte :"
+" vous pouvez désormais vous connecter en utilisant %(provname)s. (Si vous"
+" ne vous souvenez pas vous être connecté.e par l'intermédiaire de "
+"%(provname)s, il se peut que votre compte %(provname)s, identité "
+"%(provuid)s, soit compromis). Vous pouvez retirer la nouvelle méthode "
+"d'identification en suivant ce lien : %(link)s (cliquez ou copiez-collez "
+"le lien dans votre navigateur)."
+
+#: enki/textmessages.py:82
+msgid "Account deletion"
+msgstr "Suppression de votre compte"
+
+#: enki/textmessages.py:83
+#, python-format
+msgid ""
+"A request to delete your account was made. Follow this link to confirm "
+"deletion - WARNING: this cannot be undone! - %(link)s (click or copy and "
+"paste in your browser)"
+msgstr ""
+"Vous avez demandé de supprimer votre compte. Suivez ce lien pour "
+"confirmer - ATTENTION: la suppression est définitive ! - %(link)s "
+"(cliquez ou copiez-collez le lien dans votre navigateur)."
+
+#: enki/textmessages.py:84
+msgid "Account and forum posts deletion"
+msgstr "Suppression de votre compte et de vos messages de forum"
+
+#: enki/textmessages.py:85
+#, python-format
+msgid ""
+"A request to delete your account and your forum posts was made. Follow "
+"this link to confirm deletion - WARNING: this cannot be undone! - "
+"%(link)s (click or copy and paste in your browser)"
+msgstr ""
+"Vous avez demandé de supprimer votre compte et les messages que vous avez"
+" publié dans le forum. Suivez ce lien pour confirmer - ATTENTION: la "
+"suppression est définitive ! - %(link)s (cliquez ou copiez-collez le lien"
+" dans votre navigateur)."
+
+#: enki/textmessages.py:88
+msgid "[Deleted user]"
+msgstr "[Utilisateur supprimé]"
+
+#: enki/textmessages.py:89
+msgid ""
+"Your display name is your public Id. You must have a display name to post"
+" in the forums, invite friends and join games."
+msgstr ""
+"Votre nom d'affichage est votre identité publique. Il est nécessaire pour"
+" poster des messages dans le forum, inviter des amis et jouer."
+
+#: enki/textmessages.py:90
+msgid "(The display name above was randomly generated, feel free to change it.)"
+msgstr ""
+"Le nom d'affichage ci-dessus a été généré au hazard, n'hésitez pas à le "
+"modifier."
+
+#: enki/textmessages.py:91
+msgid "The name you have chosen is already in use. Please enter a new name."
+msgstr ""
+"Le nom que vous avez choisi est déjà utilisé. Veuillez en choisir un "
+"autre."
+
+#: enki/textmessages.py:92
+msgid ""
+"Your name contains forbidden symbols. Please ensure it contains only "
+"letters or digits."
+msgstr ""
+"Votre nom contient des symboles interdits. Veuillez vous assurer qu'il ne"
+" contient que des chiffres et/ou des lettres."
+
+#: enki/textmessages.py:93
+#, python-format
+msgid "Your name is %(length)s character long."
+msgid_plural "Your name is %(length)s characters long."
+msgstr[0] "Votre nom contient %(length)s charactère."
+msgstr[1] "Votre nom contient %(length)s charactères."
+
+#: enki/textmessages.py:94
+#, python-format
+msgid "It is too short. Please ensure it is at least %(length)s character long."
+msgid_plural "It is too short. Please ensure it is at least %(length)s characters long."
+msgstr[0] ""
+"Il est trop court. Veuillez vous assurer que votre nom d'affichage "
+"contient plus de %(length)s charactère."
+msgstr[1] ""
+"Il est trop court. Veuillez vous assurer que votre nom d'affichage "
+"contient plus de %(length)s charactères."
+
+#: enki/textmessages.py:95
+#, python-format
+msgid "It is too long. Please ensure it is maximum %(length)s character long."
+msgid_plural "It is too long. Please ensure it is maximum %(length)s characters long."
+msgstr[0] ""
+"Il est trop long. Veuillez vous assurer que votre nom d'affichage "
+"n'excède pas %(length)s charactère."
+msgstr[1] ""
+"Il est trop long. Veuillez vous assurer que votre nom d'affichage "
+"n'excède pas %(length)s charactères."
+
+#: enki/textmessages.py:98
+msgid "[Deleted post]"
+msgstr "[Message supprimé]"
+
+#: enki/textmessages.py:99
+msgid "The user you requested does not exist or was deleted."
+msgstr "L'utilisateur que vous avez demandé n'existe pas ou a été supprimé."
+
+#: enki/textmessages.py:100
+msgid "The forum you requested does not exist or was deleted."
+msgstr "Le forum que vous avez demandé n'existe pas ou a été supprimé."
+
+#: enki/textmessages.py:101
+msgid "The post or thread you requested does not exist or was deleted."
+msgstr "Le message ou sujet que vous avez demandé n'existe pas ou a été supprimé."
+
+#: enki/textmessages.py:102
+msgid "The post you requested does not exist or was deleted."
+msgstr "Le message que vous avez demandé n'existe pas ou a été supprimé."
+
+#: enki/textmessages.py:103
+msgid "Your thread needs a title."
+msgstr "Votre sujet doit avoir un titre."
+
+#: enki/textmessages.py:104
+msgid "Your post needs to contain some text."
+msgstr "Votre message ne peut être vide."
+
+#: enki/textmessages.py:105
+#, python-format
+msgid "Your thread title is too long by %(exceed)s character."
+msgid_plural "Your thread title is too long by %(exceed)s characters."
+msgstr[0] ""
+"Votre sujet est trop long. Il dépasse la longueur maximale de %(exceed)s "
+"charactère."
+msgstr[1] ""
+"Votre sujet est trop long. Il dépasse la longueur maximale de %(exceed)s "
+"charactères."
+
+#: enki/textmessages.py:106
+#, python-format
+msgid "Your post is too long by %(exceed)s character."
+msgid_plural "Your post is too long by %(exceed)s characters."
+msgstr[0] ""
+"Votre message est trop long. Il dépasse la longueur maximale de "
+"%(exceed)s charactère."
+msgstr[1] ""
+"Votre message est trop long. Il dépasse la longueur maximale de "
+"%(exceed)s charactères."
+
+#: enki/textmessages.py:107
+msgid "Thread submission failed. Please try again."
+msgstr ""
+"La création de votre sujet de forum a échoué. Veuillez renouveler votre "
+"tentative."
+
+#: enki/textmessages.py:108
+msgid "Post submission failed. Please try again."
+msgstr ""
+"La création de votre message a échoué. Veuillez renouveler votre "
+"tentative."
+
+#: enki/textmessages.py:109
+msgid "Post modification failed. Please try again."
+msgstr ""
+"La modification de votre message a échoué. Veuillez renouveler votre "
+"tentative."
+
+#: enki/textmessages.py:110
+msgid "Post deletion failed. Please try again."
+msgstr ""
+"La suppression de votre message a échoué. Veuillez renouveler votre "
+"tentative."
+
+#: enki/textmessages.py:113
+msgid ""
+"The name you entered is invalid. Please enter the user name of the person"
+" you'd like to invite to be your friend."
+msgstr ""
+"Le nom que vous avez entré n'est pas valide. Veuillez entrer le nom de la"
+" personne que vous voudrier inviter à devenir votre ami.e."
+
+#: enki/textmessages.py:116
+msgid "Sign in with Google"
+msgstr "Se connecter avec Google"
+
+#: enki/textmessages.py:117
+msgid "Login with Facebook"
+msgstr "Se connecter avec Facebook"
+
+#: enki/textmessages.py:118
+msgid "Sign in through Steam"
+msgstr "Se connecter avec Steam"
+
+#: enki/textmessages.py:119
+msgid "Sign in with Twitter"
+msgstr "Se connecter avec Twitter"
+
+#: templates/accountdelete.html:6 templates/profile.html:35
+msgid "Delete account"
+msgstr "Supprimer mon compte"
+
+#: templates/accountdelete.html:18
+msgid "Account deletion information"
+msgstr "Information suppression de compte"
+
+#: templates/accountdelete.html:20
+msgid "What happens to your data when you delete your account:"
+msgstr "Que deviennent vos données lorsque vous supprimez votre compte :"
+
+#: templates/accountdelete.html:22
+msgid "Your <b>private information is deleted</b>:"
+msgstr "Vos <b>données privées sont supprimées</b> :"
+
+#: templates/accountdelete.html:24
+msgid "Your email address:"
+msgstr "Votre adresse de courrier électronique:"
+
+#: templates/accountdelete.html:25
+msgid "Your <em>password</em>"
+msgstr "Votre <em>mot de passe</em>."
+
+#: templates/accountdelete.html:26
+msgid "Your third party authentication provider(s) and unique identifier(s):"
+msgstr ""
+
+#: templates/accountdelete.html:31
+msgid "Your <b>public information is anonymised</b>:"
+msgstr "Vos données publiques sont anonymisées :"
+
+#: templates/accountdelete.html:33
+#, python-format
+msgid ""
+"Your display name <em>%(display_name)s</em> is replaced with "
+"<em>%(deleted_dn)s</em> throughout."
+msgstr ""
+"Votre nom d'affichage <em>%(display_name)s</em> est remplacé par "
+"<em>%(deleted_dn)s</em>."
+
+#: templates/accountdelete.html:34
+#, python-format
+msgid ""
+"Your old display name <em>%(previous_display_names)s</em> is removed from"
+" your <a href='%(user_page_url)s'>user page</a>."
+msgid_plural ""
+"Your old display names <em>%(previous_display_names)s</em> are removed "
+"from your <a href='%(user_page_url)s'>user page</a>."
+msgstr[0] ""
+"Votre ancien nom d'affichage <em>%(previous_display_names)s</em> est "
+"effacé de votre <a href='%(user_page_url)s'>page utilisateur</a>."
+msgstr[1] ""
+"Vos anciens noms d'affichage <em>%(previous_display_names)s</em> sont "
+"effacés de votre <a href='%(user_page_url)s'>page utilisateur</a>."
+
+#: templates/accountdelete.html:35
+#, python-format
+msgid ""
+"<em><a href='%(user_page_url)s'>Forum threads and posts</a></em> you "
+"published remain visible but the author is anonymous "
+"<em>%(deleted_dn)s</em>."
+msgstr ""
+"Forum: <em><a href='%(user_page_url)s'>les sujets et messages</a></em> "
+"que vous avez publiés demeurent visible mais sont anonymisés. L'auteur "
+"est <em>%(deleted_dn)s</em>."
+
+#: templates/accountdelete.html:36
+msgid ""
+"<b>Warning</b>: once your account is deleted, you will be <b>unable to "
+"edit or delete your posts</b>."
+msgstr ""
+"<b>Attention</b>: après avoir supprimé votre compte, <b>vous ne pourrez "
+"plus éditer ou supprimer vos messages de forum</b>."
+
+#: templates/accountdelete.html:37
+#, python-format
+msgid ""
+"You can <a href='%(user_page_url)s'>Manually edit or delete individual "
+"posts from your user page</a> or check the option below to delete all "
+"your posts."
+msgstr ""
+"Vous pouvez <a href='%(user_page_url)s'>éditer ou supprimer des messages "
+"de forum individuellement à partir de votre page utilisateur</a> ou "
+"cocher l'option ci-dessous pour effacer tous vos messages."
+
+#: templates/accountdelete.html:51
+msgid "Delete my account"
+msgstr "Supprimer mon compte"
+
+#: templates/accountdelete.html:54
+msgid "You are about to delete your account, are you sure? This cannot be undone."
+msgstr ""
+"Vous êtes sur le point de supprimer votre compte. Cette action est "
+"irréversible."
+
+#: templates/accountdelete.html:58
+msgid "Delete all my forum posts permanently"
+msgstr "Supprimer définitivement tous mes messages de forum."
+
+#: templates/accountdelete.html:62
+msgid "Yes, delete my account"
+msgstr "Oui, supprimer mon compte"
+
+#: templates/accountdelete.html:63 templates/forum.html:87
+#: templates/post.html:58 templates/post.html:84
+#: templates/registeroauthconfirm.html:49 templates/thread.html:90
+msgid "Cancel"
+msgstr "Annuler"
+
+#: templates/displayname.html:6 templates/displayname.html:39
+#: templates/displayname.html:41
+msgid "Display name"
+msgstr "Nom d'affichage"
+
+#: templates/displayname.html:17 templates/profile.html:23
+msgid "Current display name:"
+msgstr "Nom d'affichage actuel :"
+
+#: templates/displayname.html:21 templates/profile.html:25
+#: templates/userposts.html:27
+msgid "Past display name:"
+msgid_plural "Past display names:"
+msgstr[0] "Ancien nom d'affichage :"
+msgstr[1] "Anciens noms d'affichage :"
+
+#: templates/displayname.html:31 templates/forum.html:114
+#: templates/post.html:109 templates/profile.html:19 templates/thread.html:115
+msgid "Set display name"
+msgstr "Créer mon nom d'affichage"
+
+#: templates/displayname.html:33 templates/profile.html:27
+msgid "Change display Name"
+msgstr "Modifier mon nom d'affichage"
+
+#: templates/displayname.html:46
+#, python-format
+msgid ""
+"Your name must be <b>between %(lengthmin)s and %(lengthmax)s character "
+"long</b>."
+msgid_plural ""
+"Your name must be <b>between %(lengthmin)s and %(lengthmax)s characters "
+"long</b>."
+msgstr[0] ""
+"La longueur de votre nom d'affichage doit être comprise <b>entre "
+"%(lengthmin)s et %(lengthmax)s charactère</b>."
+msgstr[1] ""
+"La longueur de votre nom d'affichage doit être comprise <b>entre "
+"%(lengthmin)s et %(lengthmax)s charactères</b>."
+
+#: templates/displayname.html:47
+msgid ""
+"It must be <b>alphanumeric</b>: only digits and letters - upper case, "
+"lower case and accented characters - are allowed."
+msgstr ""
+"Il doit être <b>alphanumériques</b> : les chiffres et les lettres "
+"majuscules, minuscules et accentuées sont authorisés."
+
+#: templates/displayname.html:48
+msgid ""
+"<b>Not allowed:</b> spaces, punctuation and symbols such as ?, !, ', #, "
+"*, _, -, + etc."
+msgstr ""
+"Les espaces et symboles de ponctuation tels que ?, !, ', #, *, _, -, + "
+"etc. sont interdits."
+
+#: templates/displayname.html:51
+msgid ""
+"Your display name doesn't have to be unique. A random number will "
+"automatically be attached to it to ensure it is, e.g. Silvia becomes "
+"Silvia#2702."
+msgstr ""
+"Votre nom d'affichage ne doit pas nécessairement être unique. Un nombre "
+"généré au hazard lui sera automatiquement attaché pour s'en assurer. Par "
+"exemple : Silvia devient Silvia#2702."
+
+#: templates/displayname.html:52
+msgid ""
+"Once saved, your display name <b>cannot be deleted</b>, but you can add a"
+" new name to use instead. <b>Current and old display name(s) are "
+"public</b> and visible on the user page."
+msgstr ""
+"Une fois enregistré, votre nom d'affichage <b>ne peut pas être "
+"effacé</b>, mais vous pouvez le remplacer par un nouveau nom. <b>Les noms"
+" d'affichage actuel et ancien(s) sont publics</b> et visible sur la page "
+"de l'utilsateur."
+
+#: templates/displayname.html:58
+msgid "Save my new display name"
+msgstr "Enregistrer mon nouveau nom d'affichage"
+
+#: templates/emailchange.html:6 templates/emailchange.html:20
+#: templates/emailchange.html:32 templates/profile.html:33
+msgid "Change email"
+msgstr "Modifier mon adresse de courrier électronique"
+
+#: templates/emailchange.html:23 templates/emailchange.html:25
+msgid "New email"
+msgstr "Nouvelle adresse de courrier électronique"
+
+#: templates/forum.html:6 templates/forum.html:27
+msgid "Forum"
+msgstr "Forum"
+
+#: templates/forum.html:18 templates/post.html:18 templates/thread.html:18
+#: templates/userposts.html:18
+msgid "Go back to Forums"
+msgstr "Retourner aux forums"
+
+#: templates/forum.html:22 templates/forums.html:6 templates/forums.html:29
+#: templates/incnavbartop.html:3 templates/post.html:22
+#: templates/thread.html:23 templates/userposts.html:37
+msgid "Forums"
+msgstr "Forums"
+
+#: templates/forum.html:28 templates/forums.html:36
+msgid "Threads"
+msgstr "Sujets"
+
+#: templates/forum.html:28 templates/forums.html:37 templates/thread.html:30
+#: templates/userposts.html:32
+msgid "Posts"
+msgstr "Messages"
+
+#: templates/forum.html:34
+msgid "Thread title"
+msgstr "Sujet"
+
+#: templates/forum.html:35
+msgid "Started by"
+msgstr "Publié par"
+
+#: templates/forum.html:36
+msgid "Date"
+msgstr "Date"
+
+#: templates/forum.html:37
+msgid "# posts"
+msgstr "# messages"
+
+#: templates/forum.html:57 templates/forum.html:66
+msgid "Create a new thread"
+msgstr "Créer un nouveau sujet"
+
+#: templates/forum.html:68 templates/forums.html:34
+msgid "Title"
+msgstr "Titre"
+
+#: templates/forum.html:70
+msgid "Your thread title"
+msgstr "Intitulé de votre sujet"
+
+#: templates/forum.html:72
+#, python-format
+msgid "Maximum thread title length: %(length)s character."
+msgid_plural "Maximum thread title length: %(length)s characters."
+msgstr[0] "Votre sujet peut contenir jusqu'à %(length)s charactère."
+msgstr[1] "Votre sujet peut contenir jusqu'à %(length)s charactères."
+
+#: templates/forum.html:76 templates/post.html:6 templates/post.html:29
+#: templates/post.html:73 templates/thread.html:79 templates/userposts.html:41
+msgid "Post"
+msgstr "Message"
+
+#: templates/forum.html:78 templates/post.html:75 templates/thread.html:81
+msgid "Your text"
+msgstr "Texte de votre message"
+
+#: templates/forum.html:80 templates/post.html:77 templates/thread.html:83
+#, python-format
+msgid "Use <a href='%(url)s' target='_blank'>markdown</a> for formatting."
+msgstr ""
+"Utilisez <a href='%(url)s' target='_blank'>markdown</a> pour formater "
+"votre message."
+
+#: templates/forum.html:80 templates/post.html:77 templates/thread.html:83
+#, python-format
+msgid "Maximum post length: %(length)s character."
+msgid_plural "Maximum post length: %(length)s characters."
+msgstr[0] "Votre message peut contenir jusqu'à %(length)s charactère."
+msgstr[1] "Votre message peut contenir jusqu'à %(length)s charactères."
+
+#: templates/forum.html:85 templates/post.html:82 templates/thread.html:88
+msgid "Preview"
+msgstr "Aperçu"
+
+#: templates/forum.html:86
+msgid "Submit new thread"
+msgstr "Publier le nouveau sujet"
+
+#: templates/forum.html:95 templates/post.html:92 templates/thread.html:98
+msgid "PREVIEW"
+msgstr "APERÇU"
+
+#: templates/forum.html:97 templates/thread.html:6 templates/thread.html:29
+msgid "Thread"
+msgstr "Sujet"
+
+#: templates/forum.html:100 templates/post.html:96 templates/thread.html:102
+msgid "date and time submitted UTC"
+msgstr "Date et heure UTC de publication"
+
+#: templates/forum.html:100 templates/post.html:35 templates/post.html:96
+#: templates/thread.html:38 templates/thread.html:102
+#: templates/userposts.html:44
+msgid "permalink"
+msgstr "permalien"
+
+#: templates/forum.html:113
+msgid "Please set up your display name to start a new thread."
+msgstr "Veuillez créer votre nom d'affichage pour ajouter un nouveau sujet."
+
+#: templates/forum.html:120
+msgid "Please log in or create an account to start a new thread."
+msgstr "Veuillez vous connecter ou créer un compte pour ajouter un nouveau sujet."
+
+#: templates/forum.html:121 templates/incnavbartop.html:10
+#: templates/login.html:6 templates/login.html:43
+#: templates/passwordrecover.html:39 templates/post.html:121
+#: templates/register.html:39 templates/thread.html:122
+msgid "Log in"
+msgstr "Accéder à mon compte"
+
+#: templates/forum.html:122 templates/incnavbartop.html:11
+#: templates/login.html:48 templates/passwordrecover.html:40
+#: templates/post.html:122 templates/register.html:6 templates/register.html:34
+#: templates/thread.html:123
+msgid "Sign up"
+msgstr "Créer mon compte"
+
+#: templates/forums.html:31
+msgid "total thread views"
+msgstr "visites"
+
+#: templates/forums.html:35
+msgid "Description"
+msgstr "Description"
+
+#: templates/home.html:6
+msgid "enkiWS"
+msgstr "enkiWS"
+
+#: templates/home.html:15 templates/incnavbartop.html:2
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/incnavbartop.html:7 templates/login.html:69
+#: templates/register.html:60
+msgid "Log out"
+msgstr "Déconnexion"
+
+#: templates/incnavbartop.html:8 templates/profile.html:15
+msgid "Profile and settings"
+msgstr "Profil et paramètres du compte"
+
+#: templates/incnavbartop.html:18
+msgid "Languages"
+msgstr "Langues"
+
+#: templates/incnavbartop.html:57
+msgid "Logged in"
+msgstr "Connecté.e"
+
+#: templates/incnavbartop.html:61
+msgid "Please set up your display name"
+msgstr "Veuillez créer votre nom d'affichage."
+
+#: templates/login.html:22
+msgid "Log in with email and password"
+msgstr "Accéder à mon compte avec mon adresse électronique et mon mot de passe"
+
+#: templates/login.html:27 templates/login.html:29
+#: templates/passwordrecover.html:23 templates/passwordrecover.html:25
+#: templates/register.html:25 templates/register.html:27
+#: templates/registerconfirm.html:23 templates/registeroauthconfirm.html:34
+msgid "Email"
+msgstr "Adresse de courrier électronique"
+
+#: templates/login.html:34 templates/login.html:36
+#: templates/passwordrecoverconfirm.html:23
+#: templates/passwordrecoverconfirm.html:25 templates/registerconfirm.html:30
+#: templates/registerconfirm.html:32
+msgid "Password"
+msgstr "Mot de passe"
+
+#: templates/login.html:49 templates/passwordchange.html:46
+#: templates/passwordrecover.html:6 templates/passwordrecover.html:20
+#: templates/register.html:40
+msgid "Forgot password"
+msgstr "Mot de passe oublié"
+
+#: templates/login.html:60
+msgid "Log in with a third party provider"
+msgstr "Accéder à mon compte en m'authentifiant auprès d'une tierce partie"
+
+#: templates/login.html:68 templates/register.html:59
+msgid "You are currently logged in."
+msgstr "Vous êtes actuellement connecté.e."
+
+#: templates/passwordchange.html:6 templates/passwordchange.html:20
+#: templates/profile.html:34
+msgid "Change password"
+msgstr "Changer mon mot de passe"
+
+#: templates/passwordchange.html:23 templates/passwordchange.html:25
+msgid "Current password"
+msgstr "Mot de passe actuel"
+
+#: templates/passwordchange.html:31 templates/passwordchange.html:33
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: templates/passwordchange.html:40
+msgid "Save my new password"
+msgstr "Enregistrer mon nouveau mot de passe"
+
+#: templates/passwordrecover.html:32
+msgid "Set a new password - an email will be sent"
+msgstr ""
+"Créer un nouveau mot de passe - un courrier électronique va vous être "
+"envoyé"
+
+#: templates/passwordrecoverconfirm.html:6
+#: templates/passwordrecoverconfirm.html:20
+msgid "Set password"
+msgstr "Nouveau mot de passe"
+
+#: templates/passwordrecoverconfirm.html:32
+msgid "Save my password"
+msgstr "Enregistrer mon mot de passe"
+
+#: templates/post.html:33 templates/thread.html:36 templates/userposts.html:42
+msgid "posted"
+msgstr "publié"
+
+#: templates/post.html:34 templates/thread.html:37 templates/userposts.html:43
+msgid "deleted"
+msgstr "supprimé"
+
+#: templates/post.html:34 templates/thread.html:37 templates/userposts.html:43
+msgid "edited"
+msgstr "modifié"
+
+#: templates/post.html:36 templates/thread.html:39 templates/userposts.html:45
+msgid "edit"
+msgstr "modifier"
+
+#: templates/post.html:37 templates/thread.html:40 templates/userposts.html:46
+msgid "delete"
+msgstr "supprimer"
+
+#: templates/post.html:52
+msgid "Delete post"
+msgstr "supprimer"
+
+#: templates/post.html:56
+msgid ""
+"You are about to delete the contents of your post, are you sure? This "
+"cannot be undone."
+msgstr ""
+"Vous êtes sur le point de supprimer votre message. Cette action est "
+"irréversible."
+
+#: templates/post.html:57
+msgid "Delete"
+msgstr "supprimer"
+
+#: templates/post.html:71
+msgid "Edit post"
+msgstr "Modifier votre message"
+
+#: templates/post.html:83
+msgid "Submit modified post"
+msgstr "Publier le message modifié"
+
+#: templates/post.html:108
+msgid "Please set up your display name to modify your post."
+msgstr "Veuillez créer votre nom d'affichage afin de modifier votre message."
+
+#: templates/post.html:120
+msgid "Please log in to modify your post."
+msgstr "Veuillez vous connecter afin de modifier votre message"
+
+#: templates/profile.html:6
+msgid "Profile"
+msgstr "Profil"
+
+#: templates/profile.html:16
+msgid "Public information and profile"
+msgstr "Information publique et profil"
+
+#: templates/profile.html:18
+msgid ""
+"Your display name is your public Id. You need a display name to post in "
+"the forums, invite friends and join games."
+msgstr ""
+"Votre nom d'affichage est votre identité publique. Il est nécessaire pour"
+" poster des messages dans le forum, inviter des amis et jouer."
+
+#: templates/profile.html:21
+msgid "Public user profile and forum posts:"
+msgstr "Profil public et messages de forum :"
+
+#: templates/profile.html:22
+msgid "User Id:"
+msgstr "Identifiant utilisateur :"
+
+#: templates/profile.html:30
+msgid "Private information and settings"
+msgstr "Informations privées et paramètres du compte"
+
+#: templates/profile.html:31
+msgid "Email:"
+msgstr "Adresse de courrier électronique :"
+
+#: templates/profile.html:39
+msgid "Linked accounts"
+msgstr "Comptes attachés"
+
+#: templates/profile.html:43 templates/registeroauthconfirm.html:24
+msgid "Provider:"
+msgstr "Fournisseur :"
+
+#: templates/profile.html:43
+msgid "Unique Id:"
+msgstr "Identité :"
+
+#: templates/profile.html:45
+msgid "Remove"
+msgstr "Supprimer"
+
+#: templates/register.html:22
+msgid "Create an account using an email and password"
+msgstr "Créer un compte à partir d'une adresse électronique et d'un mot de passe"
+
+#: templates/register.html:51
+msgid "Create an account using a third party provider"
+msgstr "Créer un compte en s'authentifiant auprès d'une tierce partie"
+
+#: templates/registerconfirm.html:20
+msgid "Confirm your registration using email and password"
+msgstr ""
+"Confirmer la création du compte à partir d'une adresse électronique et "
+"d'un mot de passe"
+
+#: templates/registerconfirm.html:39
+msgid "Save my password and create my account"
+msgstr "Enregistrer mon mot de passe et créer mon compte"
+
+#: templates/registeroauthconfirm.html:6
+msgid "Confirm account creation using a third party provider"
+msgstr ""
+"Confirmation de la création d'un compte en s'authentifiant auprès d'une "
+"tierce partie"
+
+#: templates/registeroauthconfirm.html:20
+msgid "Confirm your registration"
+msgstr "Confirmation de la création de votre compte"
+
+#: templates/registeroauthconfirm.html:20
+msgid "Set your email and confirm your registration"
+msgstr "Confirmation de la création de votre compte"
+
+#: templates/registeroauthconfirm.html:22
+msgid "You are about to create a new account using"
+msgstr ""
+"Vous êtes sur le point de créer un nouveau compte en utilisant votre "
+"authentifiation auprès de la tierce partie suivante"
+
+#: templates/registeroauthconfirm.html:25
+#, python-format
+msgid "Your unique identifier at %(providername)s:"
+msgstr "Votre identifiant chez %(providername)s :"
+
+#: templates/registeroauthconfirm.html:26
+#, python-format
+msgid "Email associated with your %(providername)s account:"
+msgstr "Adresse électronique associée à votre compte %(providername)s :"
+
+#: templates/registeroauthconfirm.html:33
+msgid "Please enter your email address"
+msgstr "Veuiller entrer votre adresse de courrier électronique"
+
+#: templates/registeroauthconfirm.html:42
+#, python-format
+msgid ""
+"The information above will be stored in your account so we can uniquely "
+"identify you.<br> You can change your email address once registered.<br> "
+"We do not retrieve any other information from %(providername)s."
+msgstr ""
+"Les informations ci-dessus seront stockées avec votre compte. Elles nous "
+"permettront de vous identifier et de vous donner accès à votre "
+"compte.<br> Vous aurez la possibilité de modifier votre adresse de "
+"courrier électronique une fois votre compte créé.<br> Nous ne récoltons "
+"aucune autre information provenant de votre compte %(providername)s."
+
+#: templates/registeroauthconfirm.html:48
+msgid "Yes, create account"
+msgstr "Créer mon compte"
+
+#: templates/registeroauthconfirm.html:60
+msgid "Set up my profile"
+msgstr "Éditer mon profil et les paramètres de mon compte"
+
+#: templates/registeroauthconfirm.html:61
+msgid "Continue browsing"
+msgstr "Retourner au site"
+
+#: templates/thread.html:50
+msgid "First"
+msgstr "Premier"
+
+#: templates/thread.html:51
+msgid "Previous"
+msgstr "Précédent"
+
+#: templates/thread.html:59
+msgid "Next"
+msgstr "Suivant"
+
+#: templates/thread.html:60
+msgid "Last"
+msgstr "Dernier"
+
+#: templates/thread.html:68
+msgid "Reply"
+msgstr "Répondre"
+
+#: templates/thread.html:77
+msgid "Reply "
+msgstr "Réponse"
+
+#: templates/thread.html:89
+msgid "Submit new post"
+msgstr "Publier le message"
+
+#: templates/thread.html:114
+msgid "Please set up your display name to post an answer."
+msgstr "Veuillez créer votre nom d'affichage pour répondre."
+
+#: templates/thread.html:121
+msgid "Please log in or create an account to post an answer."
+msgstr "Veuillez vous connecter ou créer un compte pour répondre."
+
+#: templates/userposts.html:6 templates/userposts.html:25
+msgid "User"
+msgstr "Utilisateur"
+

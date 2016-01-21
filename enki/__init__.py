@@ -1,0 +1,5 @@
+from handlerbase import HandlerBase
+from handlersaccount import routes_account
+from handlersforums import routes_forums
+from handlersfriends import routes_friends
+import jinjafilters

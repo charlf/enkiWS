@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>{{ _( "Confirm account creation using a third party provider" ) }}</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            {% if not success %}
+                <div class="well bs-component">
+                    <form class="form-horizontal" action="{{ url }}" method="post">
+                        <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                        <fieldset>
+                            <legend>{% if token.email %}{{ _( "Confirm your registration" ) }}{% else %}{{ _( "Set your email and confirm your registration" ) }}{% endif %}</legend>
+                            {% if token %}
+                                <p class="text-info">{{ _( "You are about to create a new account using" ) }}
+                                    <ul class="text-info">
+                                        <li>{{ _( "Provider:" ) }} <b>{{ provider_name }}</b></li>
+                                        <li>{{ _( "Your unique identifier at %(providername)s:", providername = provider_name ) }} <b>{{ provider_uid }}</b></li>
+                                        {% if token.email %}<li>{{ _( "Email associated with your %(providername)s account:", providername = provider_name ) }} <b>{{ token.email }}</b></li>{% endif %}
+                                     </ul>
+                                </p>
+
+                                {% if not token.email %}
+                                    <div class="form-group {% if error %}has-error{% endif%}">
+                                        <div class="col-lg-12">
+                                            <label class="control-label">{{ _( "Please enter your email address" ) }}</label>
+                                            <input class="form-control" type="text" name="email" placeholder="{{ _( "Email" ) }}" value={{ new_email }}>
+                                            {% if error %}<label class="control-label">{{ error }}</label>{% endif%}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                <div>
+                                <p class="text-warning">
+                                    {{ _( "The information above will be stored in your account so we can uniquely identify you.<br> You can change your email address once registered.<br> We do not retrieve any other information from %(providername)s.", providername = provider_name ) }}<br>
+                                </p>
+                                </div>
+                            {% endif %}
+                            <div class="form-group">
+                                <div class="col-lg-12">
+                                    <button class="btn btn-primary" type="submit" name = "choice" value="create">{{ _( "Yes, create account" ) }}</button>
+                                    <button class="btn btn-default" type="submit" name = "choice" value="cancel">{{ _( "Cancel" ) }}</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            {% else %}
+	            <div>
+	                <form class="form-horizontal" action="{{ url }}" method="post">
+	                    <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+	                    <div class="col-lg-12">
+	                        <button class="btn btn-primary" type="submit" name = "choice" value="profile">{{ _( "Set up my profile" ) }}</button>
+	                        <button class="btn btn-default" type="submit" name = "choice" value="continue">{{ _( "Continue browsing" ) }}</button>
+	                    </div>
+	                </form>
+		        </div>
+            {% endif%}
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

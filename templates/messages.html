@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>Messages</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            <h3>Messages</h3>
+
+            {% if data %}
+
+            <form class="form" action= "{{ 'messages'|local }}" method="post" id="listform">
+                <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                {% for item in data %}
+
+                    <p>
+                        <ul>
+                            {% if item.type == 'friend_request' %}
+                                <li><a href="{{ item.sender.user_page|local }}">{{ item.sender.display_name }}</a> invites you to be their friend.
+                                    <button type="submit" form="listform" name="accept" value="{{ item.message_id }}"/>Accept</button>
+                                    <button type="submit" form="listform" name="decline" value="{{ item.message_id }}"/>Decline</button>
+                                </li>
+                            {% else %}
+                                <li>Another type of message.
+                                    <button type="submit" form="listform" name="delete" value="{{ item.message_id }}"/>Delete message</button>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </p>
+
+                {% endfor %}
+
+            </form>
+
+            {% endif %}
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

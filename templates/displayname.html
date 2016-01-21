@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>{{ _( "Display name" ) }}</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            {% if data %}
+                {% if data.entity %}
+                    <p class="text-info">{{ _( "Current display name:" ) }} {{ data.entity.display_name }}</p>
+                {% endif %}
+
+                {% if data.list %}
+                    <p class="text-info">{{ ngettext( "Past display name:", "Past display names:", data.list | count ) }} {{ data.list | join(', ') }}</p>
+                {% endif %}
+            {% endif %}
+
+            <div class="well bs-component">
+                <form class="form-horizontal" action="{{ 'displayname'|local }}" method="post">
+                    <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                    <fieldset>
+
+                        {% if not data.entity.display_name %}
+                            <legend>{{ _( "Set display name" ) }}</legend>
+                        {% else %}
+                            <legend>{{ _( "Change display Name" ) }}</legend>
+                        {% endif %}
+
+                        {% if info %}<p class="text-info">{{ info|safe }}</p>{% endif %}
+
+                        <div class="form-group {% if error %}has-error{% endif%}">
+                            <label for="prefix" class="col-lg-2 control-label">{{ _( "Display name" ) }}</label>
+                             <div class="col-lg-10">
+                                 <input class="form-control" type="text" name="prefix" placeholder="{{ _( "Display name" ) }}" {% if auto_generated %}value ="{{ auto_generated }}"{% else %}value = "{{ prefix }}"{% endif %} />
+                                 {% if error %}<label class="control-label">{{ error }}</label>{% endif%}
+                                 {% if intro %}<p class="text-primary">{{ intro }}</p>{% endif%}
+                                 <p>
+	                                <ul class="text-info">
+	                                    <li>{{ ngettext( "Your name must be <b>between %(lengthmin)s and %(lengthmax)s character long</b>.", "Your name must be <b>between %(lengthmin)s and %(lengthmax)s characters long</b>.", prefix_length_max, lengthmin = prefix_length_min, lengthmax = prefix_length_max ) }}</li>
+                                        <li>{{ _( "It must be <b>alphanumeric</b>: only digits and letters - upper case, lower case and accented characters - are allowed." ) }}</li>
+	                                    <li>{{ _( "<b>Not allowed:</b> spaces, punctuation and symbols such as ?, !, ', #, *, _, -, + etc." ) }}</li>
+	                                </ul>
+	                             </p>
+                                 <p class="text-info">{{ _( "Your display name doesn't have to be unique. A random number will automatically be attached to it to ensure it is, e.g. Silvia becomes Silvia#2702." ) }}</p>
+	                             <p class="text-warning">{{ _( "Once saved, your display name <b>cannot be deleted</b>, but you can add a new name to use instead. <b>Current and old display name(s) are public</b> and visible on the user page." ) }}</p>
+                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button class="btn btn-primary" type="submit">{{ _( "Save my new display name" ) }}</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

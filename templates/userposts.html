@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>{{ _( "User" ) }}</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            {% if not_found %}
+                <p class="text-info">{{ not_found|safe }}</p>
+                <p>
+                    <a href="{{ 'forums'|local }}" class="btn btn-primary">{{ _( "Go back to Forums" ) }}</a>
+                </p>
+            {% elif data %}
+
+                {% if data.author_data.display_name == deleted_dn %}
+                    <h3>{{ deleted_dn_display }}</h3>
+                {% else %}
+                    <h3>{{ _( "User" ) }} {{ data.author_data.display_name }}</h3>
+                    {% if data.author_old_data %}
+                        <p>{{ ngettext( "Past display name:", "Past display names:", data.author_old_data | count ) }} {{ data.author_old_data | join(', ') }}</p>
+                    {% endif %}
+                {% endif %}
+
+                {% if data.list %}
+                    <h3>{{ _( "Posts" ) }}</h3>
+                    {% for item in data.list %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <ul class="breadcrumb">
+                                    <li><a href="{{ data.forums_url }}">{{ _( "Forums" ) }}</a></li>
+                                    <li><a href="{{ data.forums_url }}#{{ item.forum_group }}">{{ item.forum_group }}</a></li>
+                                    <li><a href="{{ item.forum_url }}">{{ item.forum_title }}</a></li>
+                                    <li><a href="{{ item.thread_url }}">{{ item.thread_title }}</a></li>
+                                    <li><a href="{{ item.post_page }}">{{ _( "Post" ) }}</a></li>
+                                    - {{ _( "posted" )}} {{ item.time_created.strftime( "%a, %d %b %Y, %H:%M:%S" )}} UTC
+                                    {% if item.time_updated %}- {% if item.body == deleted_post %}{{ _( "deleted" ) }}{% else %}{{ _( "edited" ) }}{% endif %} {{ item.time_updated.strftime( "%a, %d %b %Y %H:%M:%S" )}} UTC{% endif %}
+                                    - <a href="{{ item.post_page }}">{{ _( "permalink" ) }}</a>
+                                    {% if isauthor %}- <a href="{{ item.post_page|joinurl({ 'change':'edit' }) }}">{{ _( "edit" ) }}</a>
+	                                {% if item.body != deleted_post %}- <a href="{{ item.post_page|joinurl({ 'change':'delete' }) }}">{{ _( "delete" ) }}</a>{% endif %}{% endif %}
+                                </ul>
+                            </div>
+                            <div class="panel-body">
+                                {% if item.body == deleted_post %}{{ deleted_post_display }}{% else %}{{ data.markdown( item.body )|safe }}{% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
+            {% endif %}
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

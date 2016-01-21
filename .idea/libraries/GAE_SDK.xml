@@ -1,0 +1,44 @@
+<component name="libraryTable">
+  <library name="GAE_SDK" type="python">
+    <CLASSES>
+      <root url="file://$GAE_PATH$" />
+      <root url="file://$GAE_PATH$/lib/antlr3" />
+      <root url="file://$GAE_PATH$/lib/argparse" />
+      <root url="file://$GAE_PATH$/lib/cacerts" />
+      <root url="file://$GAE_PATH$/lib/cherrypy" />
+      <root url="file://$GAE_PATH$/lib/concurrent" />
+      <root url="file://$GAE_PATH$/lib/deprecated_enum" />
+      <root url="file://$GAE_PATH$/lib/distutils" />
+      <root url="file://$GAE_PATH$/lib/docker" />
+      <root url="file://$GAE_PATH$/lib/endpoints-1.0" />
+      <root url="file://$GAE_PATH$/lib/fancy_urllib" />
+      <root url="file://$GAE_PATH$/lib/google-api-python-client" />
+      <root url="file://$GAE_PATH$/lib/graphy" />
+      <root url="file://$GAE_PATH$/lib/grizzled" />
+      <root url="file://$GAE_PATH$/lib/httplib2" />
+      <root url="file://$GAE_PATH$/lib/ipaddr" />
+      <root url="file://$GAE_PATH$/lib/jinja2-2.6" />
+      <root url="file://$GAE_PATH$/lib/markupsafe-0.15" />
+      <root url="file://$GAE_PATH$/lib/mox" />
+      <root url="file://$GAE_PATH$/lib/oauth2" />
+      <root url="file://$GAE_PATH$/lib/prettytable" />
+      <root url="file://$GAE_PATH$/lib/protorpc-1.0" />
+      <root url="file://$GAE_PATH$/lib/PyAMF-0.6.1" />
+      <root url="file://$GAE_PATH$/lib/pyasn1" />
+      <root url="file://$GAE_PATH$/lib/pyasn1_modules" />
+      <root url="file://$GAE_PATH$/lib/python-gflags" />
+      <root url="file://$GAE_PATH$/lib/requests" />
+      <root url="file://$GAE_PATH$/lib/rsa" />
+      <root url="file://$GAE_PATH$/lib/setuptools-0.6c11" />
+      <root url="file://$GAE_PATH$/lib/simplejson" />
+      <root url="file://$GAE_PATH$/lib/six" />
+      <root url="file://$GAE_PATH$/lib/sqlcmd" />
+      <root url="file://$GAE_PATH$/lib/websocket" />
+      <root url="file://$GAE_PATH$/lib/django-1.5" />
+      <root url="file://$GAE_PATH$/lib/webapp2-2.5.2" />
+      <root url="file://$GAE_PATH$/lib/webob-1.2.3" />
+      <root url="file://$GAE_PATH$/lib/yaml-3.10" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

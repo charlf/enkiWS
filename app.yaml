@@ -1,0 +1,38 @@
+application: enkisoftware-webservices
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /css
+  static_dir: static/css
+
+- url: /js
+  static_dir: static/js
+
+  # specified favicon.ico in root
+- url: /favicon\.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon\.ico
+
+  # specified apple-touch-icon.png in root
+- url: /apple-touch-icon.*\.png
+  static_files: static/images/apple-touch-icon.png
+  upload: static/images/apple-touch-icon\.png
+
+  # special handling for png: don't use mime_type x-png
+- url: /(.*\.(png))
+  mime_type: image/png
+  static_files: static/\1
+  upload: static/(.*\.(png))
+
+- url: /.*
+  script: main.app
+  secure: always
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

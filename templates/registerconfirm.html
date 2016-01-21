@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>{{ _( "Registration confirmation" ) }}</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            <div class="well bs-component">
+                <form class="form-horizontal" action="{{ url }}" method="post">
+                    <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                    <fieldset>
+
+                        <legend>{{ _( "Confirm your registration using email and password" ) }}</legend>
+
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label" for="disabledInput">{{ _( "Email" ) }}</label>
+                                 <div class="col-lg-10">
+                                     <input class="form-control" id="disabledInput" type="text" disabled="" placeholder="{{ email }}" />
+                                </div>
+                            </div>
+
+                            <div class="form-group {% if error %}has-error{% endif%}">
+                                <label for="password" class="col-lg-2 control-label">{{ _( "Password" ) }}</label>
+                                 <div class="col-lg-10">
+                                     <input class="form-control" type="password" name="password" placeholder="{{ _( "Password" ) }}" />
+                                     {% if error %}<label class="control-label">{{ error }}</label>{% endif%}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button class="btn btn-primary" type="submit">{{ _( "Save my password and create my account" ) }}</button>
+                                </div>
+                            </div>
+
+                    </fieldset>
+                </form>
+            </div>
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

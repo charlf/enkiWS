@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>Friends</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            <h3>Invite friends</h3>
+
+            <form class="form" action= "{{ 'friends'|local }}" method="post" id="mainform">
+                <input type="text" name="invite" label="Name"/>
+                <input type="submit" value="invite to become friend"/>
+            </form>
+
+            {% if error %}
+                <font color="red">{{ error }}</font>
+            {% endif %}
+
+            {% if result %}
+                <form class="form" action= "{{ 'friends'|local }}" method="post" id="listform">
+                    <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                    {% if result.best_guess %}
+                        <p>
+                            You want to add this particular friend:<br>
+                            {{ result.best_guess.prefix }}{{ result.best_guess.suffix }}
+                            <a href="{{ result.best_guess.user_page|local }}">{{ result.best_guess.display_name }}</a>
+                            <button type="submit" form="listform" name="confirm" value="{{ result.best_guess.user_id }}"/>Confirm Invitation</button>
+                        </p>
+                    {% endif %}
+
+                    {% if result.suggestions %}
+                        <p>
+                            Your friend could be any of these:<br>
+                            {% for item in result.suggestions %}
+                                <a href="{{ item.user_page|local }}">{{ item.display_name }}</a>
+                                <button type="submit" form="listform" name="confirm" value="{{ item.user_id }}"/>Confirm Invitation</button><br>
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                </form>
+            {% endif %}
+
+            {% if data %}
+                <form class="form" action= "{{ 'friends'|local }}" method="post" id="listform">
+                    <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                    {% for item in data %}
+                        <p>
+                            <ul>
+                                <li>
+                                    <a href="{{ item.user_page|local }}">{{ item.display_name }}</a>
+                                    <button type="submit" form="listform" name="remove" value="{{ item.user_id }}"/>Remove</button>
+                                </li>
+                            </ul>
+                        </p>
+                    {% endfor %}
+                </form>
+            {% endif %}
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

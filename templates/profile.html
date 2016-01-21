@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>{{ _( "Profile" ) }}</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            <h1>{{ _( "Profile and settings" ) }}</h1>
+            <h2>{{ _( "Public information and profile" )}}</h2>
+            {% if not data.current_display_name %}
+                <div><p class="text-info">{{ _( "Your display name is your public Id. You need a display name to post in the forums, invite friends and join games." )}}</p>
+                    <a href="{{ 'displayname'|local }}" class="btn btn-info">{{ _( "Set display name" ) }}</a></div>
+            {% else %}
+                <p>{{ _( "Public user profile and forum posts:" )}} <a href = "{{ data.current_display_name.user_page }}">{{ data.current_display_name.user_page }}</a></p>
+                <p>{{ _( "User Id:" )}} {{ data.current_display_name.user_id }}</p>
+                <p>{{ _( "Current display name:" )}} {{ data.current_display_name.display_name }}</p>
+                {% if data.previous_display_names %}
+                <p>{{ ngettext( "Past display name:", "Past display names:", data.previous_display_names | count ) }} {{ data.previous_display_names | join(', ') }}</p>
+                {% endif %}
+                <p><a href="{{ 'displayname'|local }}" class="btn btn-default">{{ _( "Change display Name" ) }}</a></p>
+            {% endif %}
+
+            <h2>{{ _( "Private information and settings" )}}</h2>
+            <p>{{ _( "Email:" )}} {{ data.email }} </p>
+            <p>
+                <a href="{{ 'emailchange'|local }}" class="btn btn-default">{{ _( "Change email" )}}</a>
+                {% if data.allow_change_pw %}<a href="{{ 'passwordchange'|local }}" class="btn btn-default">{{ _( "Change password" )}}</a>{% else %}<a href="#" class="btn btn-default disabled">{{ _( "Change password" )}}</a>{% endif %}
+                <a href="{{ 'accountdelete'|local }}" class="btn btn-default">{{ _( "Delete account" )}}</a>
+	        </p>
+
+            {% if data.auth_provider %}
+                <h3>{{ _( "Linked accounts" )}}</h3>
+                <form class="form-group" action="{{ 'profile'|local }}" method="post">
+                    {% for item in data.auth_provider %}
+                        <p>
+                            {{ _( "Provider:" )}} {{ item.provider_name }} | {{ _( "Unique Id:" )}} {{ item.provider_uid }}
+                            {% if data.enough_accounts %}
+                                &nbsp;<button class="btn btn-default" type="submit" name="remove" value="{{ item.provider_name }}:{{item.provider_uid}}">{{ _( "Remove" )}}</button>
+                            {% endif %}
+                        </p>
+                    {% endfor %}
+                </form>
+            {% endif %}
+
+{# Hide for first round of testing
+            <h3>{{ _( "Friends" )}}</h3>
+            <p>
+	            <a href="{{ 'friends'|local }}" class="btn btn-default">{{ _( "Friends" )}}</a>
+                <a href="{{ 'messages'|local }}" class="btn btn-default">{{ _( "Messages" )}}</a>
+	        </p>
+#}
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

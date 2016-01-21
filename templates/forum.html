@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        {% include "inchead.html" %}
+        <title>{{ _( "Forum" ) }}</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            {% include "incnavbartop.html" %}
+            {% include "incmessageinfo.html" %}
+
+            {% if not_found %}
+                <p class="text-info">{{ not_found|safe }}</p>
+                <p>
+                    <a href="{{ 'forums'|local }}" class="btn btn-primary">{{ _( "Go back to Forums" ) }}</a>
+                </p>
+            {% elif data %}
+                <ul class="breadcrumb">
+                    <li><a href="{{ data.forums_url }}">{{ _( "Forums" ) }}</a></li>
+                    <li><a href="{{ data.forums_url }}#{{ data.forum.group }}">{{ data.forum.group }}</a></li>
+                    <li>{{ data.forum.title }}</li>
+                </ul>
+
+                <h3>{{ _( "Forum" ) }} - {{ data.forum.title }}</h3>
+                <p>{{ data.forum.num_threads }} {{ _( "Threads" ) }} - {{ data.num_posts }} {{ _( "Posts" ) }}</p>
+
+                {% if data.list %}
+                    <table class="table table-striped table-hover ">
+                        <thead>
+                            <tr>
+                                <th>{{ _( "Thread title" ) }}</th>
+                                <th>{{ _( "Started by" ) }}</th>
+                                <th>{{ _( "Date" ) }}</th>
+                                <th>{{ _( "# posts" ) }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in data.list %}
+                            <tr>
+                                <td><a href="{{ item.url }}">{{ item.title }}</a></td>
+                                <td>{% if item.author_data.display_name == deleted_dn %}{{ deleted_dn_display }}{% else %}<a href="{{ item.author_data.user_page }}">{{ item.author_data.display_name}}</a>{% endif %}</td>
+                                <td>{{ item.time_created.strftime( "%a, %d %b %Y %H:%M:%S" )}} UTC</td>
+                                <td>{{ item.num_posts }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% endif %}
+
+                {% if is_logged_in %}
+                    {% if not show_input %}
+						<form class="form-horizontal" action="{{ 'forum'|local({ 'forum': data.forum_selected, '_fragment':'bottom' }) }}" method="post" id="mainform">
+							<input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+							<button class="btn btn-primary" type="submit" name="submittype" value="input" >{{ _( "Create a new thread" ) }}</button>
+						</form>
+                    {% else %}
+                        {% if display_name %}
+                            <div class="well bs-component">
+                                <form class="form-horizontal" action="{{ 'forum'|local({ 'forum': data.forum_selected, '_fragment':'bottom' }) }}" method="post" id="mainform">
+                                    <input type="hidden" name="preventmultitoken" value="{{ preventmultitoken }}">
+                                    <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                                    <fieldset>
+                                        <legend>{{ _( "Create a new thread" ) }}</legend>
+                                        <div class="form-group {% if error_threadtitle %}has-error{% endif%}">
+                                            <label for="thread_title" class="col-lg-1 control-label">{{ _( "Title" ) }}</label>
+                                            <div class="col-lg-11">
+                                                <input class="form-control" type="text" name="thread_title" placeholder="{{ _( "Your thread title" ) }}" value = "{{ threadtitle }}"/>
+                                                {% if error_threadtitle %}<label class="control-label">{{ error_threadtitle }}</label><a href id="bottom"></a>{# <!-- scroll to bottom if there's an error --> #}{% endif%}
+                                                <p class="text-info">{{ ngettext( "Maximum thread title length: %(length)s character.", "Maximum thread title length: %(length)s characters.", maxthreadtitlelength, length = maxthreadtitlelength ) }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group {% if error_postbody %}has-error{% endif%}">
+                                            <label for="post_body" class="col-lg-1 control-label">{{ _( "Post" ) }}</label>
+                                            <div class="col-lg-11">
+                                                <textarea class="form-control" rows="6" id="textArea" name="post_body" placeholder="{{ _( "Your text" ) }}">{{ postbody }}</textarea>
+                                                {% if error_postbody %}<label class="control-label">{{ error_postbody }}</label><a href id="bottom"></a>{# <!-- scroll to bottom if there's an error --> #}{% endif%}
+                                                <p class="text-info">{{ _( "Use <a href='%(url)s' target='_blank'>markdown</a> for formatting.", url = "http://daringfireball.net/projects/markdown/syntax" ) }} {{ ngettext( "Maximum post length: %(length)s character.", "Maximum post length: %(length)s characters.", maxpostlength, length = maxpostlength ) }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-11 col-lg-offset-1">
+                                                <button class="btn btn-info" type="submit" name="submittype" value="preview">{{ _( "Preview" ) }}</button>
+                                                <button class="btn btn-primary" type="submit" name="submittype" value="submit">{{ _( "Submit new thread" ) }}</button>
+                                                <button class="btn btn-default" type="submit" name="submittype" value="cancel">{{ _( "Cancel" ) }}</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+
+                            {% if previewpost and previewthreadtitle %}
+                                <h4 class="text-info">{{ _( "PREVIEW" ) }}</h4>
+                                <hr>
+                                <h3 class="text-info">{{ _( "Thread" ) }} - {{ previewthreadtitle|safe }}</h3>
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">
+                                        {{ display_name }} - {{ _( "date and time submitted UTC" ) }} - {{ _( "permalink" ) }}
+                                    </div>
+                                    <div class="panel-body">
+                                        {{ data.markdown( previewpost )|safe }}
+                                    </div>
+                                </div>
+                                <hr>
+                                <a href id="bottom"></a> {# <!-- scroll to bottom if there's a preview --> #}
+                            {% endif %}
+
+                        {% else %}
+                            <form class="form-horizontal" action="{{ 'forum'|local({ 'forum': data.forum_selected }) }}" method="post" id="mainform">
+                                <input type="hidden" name="CSRF" value="{{ CSRFtoken }}">
+                                <p class="text-info">{{ _( "Please set up your display name to start a new thread." ) }}</p>
+                                <button class="btn btn-info" type="submit" name="submittype">{{ _( "Set display name" ) }}</button> {# will be handled by enkilibdisplayname.ensure_has_display_name #}
+                            </form>
+                        {% endif %}
+                    {% endif %}
+	            {% else %}
+                    <div>
+                        <p class="text-info">{{ _( "Please log in or create an account to start a new thread." ) }}</p>
+                        <a href="{{ 'login'|local }}" class="btn btn-primary">{{ _( "Log in" ) }}</a>
+                        <a href="{{ 'register'|local }}" class="btn btn-primary">{{ _( "Sign up" ) }}</a>
+                    </div>
+                {% endif %}
+
+            {% endif %}
+
+            {% include "incfooter.html" %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+{# <!-- menu items always accessible. ( 'href', 'id', 'caption' ) --> #}
+{% set navigation_bar_top = [	( 'home'|local, 'home', _( "Home" ) ),
+								( 'forums'|local , 'forums', _( "Forums" ) )] -%}
+{# <!-- menu items affected by user status - logged in or out --> #}
+{% set is_logged_in = is_logged_in|default( False ) -%}
+{% if is_logged_in == True %}
+    {% set navigation_bar_top_right = [	( 'logout'|local, 'logout', _( "Log out" ) ),
+										( 'profile'|local, 'profile', _( "Profile and settings" ) )] -%}
+{% else %}
+    {% set navigation_bar_top_right = [	('login'|local, 'login', _( "Log in" ) ),
+										('register'|local, 'register', _( "Sign up" ) )] -%}
+{% endif %}
+{# <!-- reference: http://jinja.pocoo.org/docs/dev/tricks/#highlighting-active-menu-items --> #}
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+		<div class="text-right">
+			<div class="btn-group">
+				<a href="#" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{ _( "Languages" ) }} <span class="caret"></span></a>
+				<ul class="dropdown-menu">
+                    <li><a href="{{ request_url|joinurl({ 'locale':'en_US' }) }}">en-US (default)</a></li>
+					<li><a href="{{ request_url|joinurl({ 'locale':'en_EN' }) }}">en-EN</a></li>
+					<li><a href="{{ request_url|joinurl({ 'locale':'fr_FR' }) }}">fr-FR</a></li>
+				</ul>
+			</div>
+		</div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ 'home'|local }}">enkiWS</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+               {% for href, id, caption in navigation_bar_top %}
+                    <li {% if id == active_page %}class="active"{% endif %}>
+                        <a href="{{ href|e }}">
+                            {{ caption|e }}{% if id == active_page %}<span class="sr-only">(current)</span>{% endif %}
+                        </a>
+                    </li>
+               {% endfor %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% for href, id, caption in navigation_bar_top_right %}
+                    <li {% if id == active_page %}class="active"{% endif %}>
+                        <a href="{{ href|e }}">
+                            {{ caption|e }}{% if id == active_page %}<span class="sr-only">(current)</span>{% endif %}
+                        </a>
+                    </li>
+               {% endfor %}
+            </ul>
+        </div>
+        {% if is_logged_in %}<div class="text-right">
+	        <p class="text-info">
+		        <small>{{ _( "Logged in" ) }} </small>
+		        {% if display_name %}
+		            <small>&nbsp;<b>{{display_name}}</b></small>
+	            {% else %}
+		            &nbsp;<a href="{{ 'displayname'|local }}" class="btn btn-info btn-xs">{{ _( "Please set up your display name" ) }}</a>
+		        {% endif %}
+	        </p>
+        </div>{% endif %}
+    </div>
+</nav>
