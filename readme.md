@@ -39,8 +39,8 @@ This is a work in progress and not yet ready for production use.
 
 ## Credits
 
-Developed by [Juliette Foucaut](http://www.enkisoftware.com/about.html#juliette) @juliettef
-Architecture and OAuth implementation - [Doug Binks](http://www.enkisoftware.com/about.html#doug) @dougbinks
+Developed by [Juliette Foucaut](http://www.enkisoftware.com/about.html#juliette) - [@juliettef](https://github.com/juliettef)  
+Architecture and OAuth implementation - [Doug Binks](http://www.enkisoftware.com/about.html#doug) - [@dougbinks](https://github.com/dougbinks)
 
 ## License
 
