@@ -13,6 +13,7 @@ class HandlerMain( enki.HandlerBase ):
 		self.render_tmpl( 'home.html',
 		                  active_page = 'home' )
 
+enki.ExtensionLibrary.set_extensions([ enki.ExtensionForums()])
 
 config = {}
 config[ 'webapp2_extras.sessions' ] = { 'secret_key': settings.KEY_SESSION }
@@ -25,9 +26,8 @@ config[ 'webapp2_extras.jinja2' ] = { 'template_path': 'templates',
 
 routes = [ webapp2.Route( '/', HandlerMain, name = 'home' ) ]
 routes += enki.routes_account \
-          + enki.routes_forums \
-          + enki.routes_friends \
-          + settings.get_routes_oauth()
+          + settings.get_routes_oauth() \
+          + enki.ExtensionLibrary.get_routes()
 
 
 app = webapp2.WSGIApplication( routes = routes, debug = enki.libutil.is_debug(), config = config )

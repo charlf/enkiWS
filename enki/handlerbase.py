@@ -245,11 +245,15 @@ class HandlerBase( webapp2.RequestHandler ):
 	def render_tmpl( self, template_file, **kwargs ):
 	# render an html template with data using jinja2
 		try:
+			navbar_extensions = enki.ExtensionLibrary.get_navbar_items()
+			page_extensions = enki.ExtensionLibrary.get_page_extensions( self )
 			display_name = enki.libdisplayname.get_EnkiUserDisplayName_by_user_id_current( self.user_id ) if self.is_logged_in( ) else ''
 			self.response.write( self.jinja2.render_template(
 									template_file,
 									request_url = self.request.url,
 				                    is_logged_in = self.is_logged_in(),
+									navbar_extensions = navbar_extensions,
+									page_extensions = page_extensions,
 									display_name = ( display_name.prefix + display_name.suffix ) if display_name else '',
 									locale = i18n.get_i18n().locale,
 				                    debug = self.session.pop( 'debugmessage', None ) if enki.libutil.is_debug else None,

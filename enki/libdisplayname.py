@@ -32,7 +32,7 @@ def get_user_id_display_name_url( entity ):
 	# based on a display name entity, return a named tuple containing their user_id, display name and url
 	user_id = entity.user_id
 	display_name = entity.prefix + entity.suffix
-	user_page = enki.libutil.get_local_url( 'userposts', { 'userposts': str( user_id ) } )
+	user_page = enki.libutil.get_local_url( 'profilepublic', { 'useridnumber': str( user_id ) } )
 	result = userDisplayNamePage( user_id , display_name, user_page )
 	return result
 
@@ -69,7 +69,7 @@ def find_users_by_display_name( input_name, user_id ):
 		for i, item in enumerate( suggestions ):
 			id = item.user_id
 			display_name = item.prefix + item.suffix
-			user_page = enki.libutil.get_local_url( 'userposts', { 'userposts': str( item.user_id ) } )
+			user_page = enki.libutil.get_local_url( 'profilepublic', { 'useridnumber': str( item.user_id ) } )
 			user_display_name_page = userDisplayNamePage( id, display_name, user_page )
 			suggestion_list.append( user_display_name_page )
 	elif suggestions == []:

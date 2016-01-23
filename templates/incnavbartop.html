@@ -1,6 +1,5 @@
 {# <!-- menu items always accessible. ( 'href', 'id', 'caption' ) --> #}
-{% set navigation_bar_top = [	( 'home'|local, 'home', _( "Home" ) ),
-								( 'forums'|local , 'forums', _( "Forums" ) )] -%}
+{% set navigation_bar_top = [	( 'home'|local, 'home', _( "Home" ) ) ] + navbar_extensions -%}
 {# <!-- menu items affected by user status - logged in or out --> #}
 {% set is_logged_in = is_logged_in|default( False ) -%}
 {% if is_logged_in == True %}

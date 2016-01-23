@@ -32,7 +32,7 @@ forumsData = collections.namedtuple( 'forumsData', 'num_threads, num_posts, list
 forumData = collections.namedtuple( 'forumData', 'forums_url, forum, num_posts, list, markdown, forum_selected')
 threadData = collections.namedtuple( 'threadData', 'forums_url, forum, forum_url, thread, thread_url, list, markdown, thread_selected')
 postData = collections.namedtuple( 'postData', 'forums_url, forum, forum_url, thread, thread_url, post, post_page, author_data, markdown' )
-authorpostsData = collections.namedtuple( 'authorpostsData', 'forums_url, author_data, author_old_data, list, markdown' )
+authorpostsData = collections.namedtuple( 'authorpostsData', 'forums_url, author_data, list, markdown' )
 pagination = collections.namedtuple( 'pagination', 'page_first, page_previous, page_current, page_list, page_next, page_last' )
 
 
@@ -205,7 +205,6 @@ def get_author_posts( author_selected ):  # MOVED TO LIB
 	if author_display_name:
 		forums_url = enki.libutil.get_local_url( 'forums' )
 		author_data = enki.libdisplayname.get_user_id_display_name_url( author_display_name )
-		author_old_data = enki.libdisplayname.get_user_display_name_old( int( author_selected ) )
 		list = fetch_EnkiPost_by_author( int( author_selected ))
 		if list:
 			for i, item in enumerate( list ):
@@ -218,7 +217,7 @@ def get_author_posts( author_selected ):  # MOVED TO LIB
 				item.forum_url = enki.libutil.get_local_url( 'forum', { 'forum': str( forum.key.id( ) ) } )
 				item.post_page = enki.libutil.get_local_url( 'post', { 'post': str( item.key.id( ) ) } )
 				list[ i ] = item
-		author_posts_data = authorpostsData( forums_url, author_data, author_old_data, list, markdown2.markdown )
+		author_posts_data = authorpostsData( forums_url, author_data, list, markdown2.markdown )
 		return author_posts_data
 
 

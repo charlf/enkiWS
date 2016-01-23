@@ -99,6 +99,16 @@ class HandlerProfile( enki.HandlerBase ):
 			self.redirect( enki.libutil.get_local_url( 'profile' ) )
 
 
+class HandlerProfilePublic( enki.HandlerBase ):
+
+	def get( self, useridnumber ):
+		if self.ensure_is_logged_in():
+			display_name_data = enki.libdisplayname.get_display_name_data( self.user_id )
+			self.render_tmpl( 'userpublic.html',
+			                  active_page = 'home',
+			                  display_name_data = display_name_data )
+
+
 class HandlerRegister( enki.HandlerBase ):
 
 	def get( self ):
@@ -630,6 +640,7 @@ class HandlerAccountDeleteConfirm( enki.HandlerBase ):
 routes_account = [ webapp2.Route( '/login', HandlerLogin, name = 'login' ),
 		           webapp2.Route( '/logout', HandlerLogout, name = 'logout' ),
 				   webapp2.Route( '/profile', HandlerProfile, name = 'profile' ),
+				   webapp2.Route( '/u/<useridnumber>', HandlerProfilePublic, name = 'profilepublic' ),
 				   webapp2.Route( '/register', HandlerRegister, name = 'register' ),
 				   webapp2.Route( '/rc/<verifytoken>', HandlerRegisterConfirm, name = 'registerconfirm' ),
 				   webapp2.Route( '/registeroauthconfirm', HandlerRegisterOAuthConfirm, name = 'registeroauthconfirm' ),

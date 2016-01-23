@@ -1,8 +1,12 @@
 import webapp2
 
+from webapp2_extras.i18n import gettext as _
+
 import enki
 import enki.textmessages as MSG
 
+from enki.extensions import Extension
+from enki.extensions import ExtensionPage
 from enki.modelcounter import EnkiModelCounter
 from enki.modelforum import EnkiModelForum
 from enki.modelthread import EnkiModelThread
@@ -285,29 +289,39 @@ class HandlerPost( enki.HandlerBase ):
 				                  preview = preview )
 
 
-class HandlerUserPosts( enki.HandlerBase ):
+class ExtensionPageUserPosts( ExtensionPage ):
 
-	def get( self, userposts ):
-		if self.ensure_is_logged_in():
-			data = ''
-			not_found = ''
-			is_author = False
-			if userposts.isdigit() and enki.libuser.EnkiModelUser.get_by_id( int( userposts ) ):
-				data = enki.libforum.get_author_posts( userposts )
-				if data:
-					is_author = True if self.user_id == data.author_data.user_id else False
+	def __init__( self ):
+		ExtensionPage.__init__( self, route_name = 'profilepublic', template_include = 'incuserposts.html' )
+
+	def get_data( self, handler ):
+		useridnumber = handler.request.route_kwargs.get( 'useridnumber' )
+		data = {}
+		data[ 'posts' ] = ''
+		data[ 'not_found' ] = ''
+		data[ 'is_author' ] = False
+		if handler.ensure_is_logged_in():
+			if useridnumber.isdigit() and enki.libuser.EnkiModelUser.get_by_id( int( useridnumber ) ):
+				posts = enki.libforum.get_author_posts( useridnumber )
+				if posts:
+					data[ 'posts' ] = posts
+					data[ 'is_author' ] = True if handler.user_id == posts.author_data.user_id else False
 			else:
-				not_found = MSG.USER_NOT_EXIST()
-			self.render_tmpl( 'userposts.html',
-			                  active_page = 'forums',
-			                  data = data,
-			                  not_found = not_found,
-			                  isauthor = is_author )
+				data[ 'not_found' ] = MSG.USER_NOT_EXIST()
+		return data
 
 
-routes_forums = [ webapp2.Route( '/forums', HandlerForums, name = 'forums' ),
+class ExtensionForums( Extension ):
+
+	def get_routes( self ):
+		return  [ webapp2.Route( '/forums', HandlerForums, name = 'forums' ),
                   webapp2.Route( '/f/<forum>', HandlerForum, name = 'forum' ),
 		          webapp2.Route( '/t/<thread>', HandlerThread, name = 'thread' ),
 		          webapp2.Route( '/p/<post>', HandlerPost, name = 'post' ),
-		          webapp2.Route( '/u/<userposts>', HandlerUserPosts, name = 'userposts' ),
                   ]
+
+	def get_navbar_items( self ):
+		return [( enki.libutil.get_local_url( 'forums' ), 'forums', _( "Forums" ))]
+
+	def get_page_extensions( self ):
+		return [ ExtensionPageUserPosts()]
