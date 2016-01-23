@@ -103,7 +103,11 @@ class HandlerProfilePublic( enki.HandlerBase ):
 
 	def get( self, useridnumber ):
 		if self.ensure_is_logged_in():
-			display_name_data = enki.libdisplayname.get_display_name_data( self.user_id )
+			display_name_data = None
+			if useridnumber.isdigit and enki.libuser.EnkiModelUser.get_by_id( int( useridnumber )):
+				display_name_data = enki.libdisplayname.get_display_name_data( int( useridnumber ))
+			else:
+				self.add_infomessage( 'info', MSG.INFORMATION(), MSG.USER_NOT_EXIST())
 			self.render_tmpl( 'userpublic.html',
 			                  active_page = 'home',
 			                  display_name_data = display_name_data )

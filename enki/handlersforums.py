@@ -298,7 +298,6 @@ class ExtensionPageUserPosts( ExtensionPage ):
 		useridnumber = handler.request.route_kwargs.get( 'useridnumber' )
 		data = {}
 		data[ 'posts' ] = ''
-		data[ 'not_found' ] = ''
 		data[ 'is_author' ] = False
 		if handler.ensure_is_logged_in():
 			if useridnumber.isdigit() and enki.libuser.EnkiModelUser.get_by_id( int( useridnumber ) ):
@@ -306,8 +305,6 @@ class ExtensionPageUserPosts( ExtensionPage ):
 				if posts:
 					data[ 'posts' ] = posts
 					data[ 'is_author' ] = True if handler.user_id == posts.author_data.user_id else False
-			else:
-				data[ 'not_found' ] = MSG.USER_NOT_EXIST()
 		return data
 
 
