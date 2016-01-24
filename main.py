@@ -13,7 +13,7 @@ class HandlerMain( enki.HandlerBase ):
 		self.render_tmpl( 'home.html',
 		                  active_page = 'home' )
 
-enki.ExtensionLibrary.set_extensions([ enki.ExtensionForums()])
+enki.ExtensionLibrary.set_extensions([ enki.ExtensionStore(), enki.ExtensionForums()])
 
 config = {}
 config[ 'webapp2_extras.sessions' ] = { 'secret_key': settings.KEY_SESSION }

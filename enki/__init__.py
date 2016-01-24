@@ -2,5 +2,6 @@ from extensions import ExtensionLibrary
 from handlerbase import HandlerBase
 from handlersaccount import routes_account
 from handlersforums import ExtensionForums
+from handlersstore import ExtensionStore
 from handlersfriends import routes_friends
 import jinjafilters
