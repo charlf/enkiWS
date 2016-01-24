@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-01-21 15:03+0000\n"
+"POT-Creation-Date: 2016-01-24 16:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,16 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.1.1\n"
+
+#: enki/handlersforums.py:321 templates/forum.html:22 templates/forums.html:6
+#: templates/forums.html:29 templates/incuserposts.html:8
+#: templates/post.html:22 templates/thread.html:23
+msgid "Forums"
+msgstr ""
+
+#: enki/handlersstore.py:33 templates/store.html:6 templates/store.html:15
+msgid "Store"
+msgstr ""
 
 #: enki/textmessages.py:7
 msgid "Success"
@@ -593,7 +603,7 @@ msgid "Current display name:"
 msgstr ""
 
 #: templates/displayname.html:21 templates/profile.html:25
-#: templates/userposts.html:27
+#: templates/profilepublic.html:21
 msgid "Past display name:"
 msgid_plural "Past display names:"
 msgstr[0] ""
@@ -663,22 +673,15 @@ msgid "Forum"
 msgstr ""
 
 #: templates/forum.html:18 templates/post.html:18 templates/thread.html:18
-#: templates/userposts.html:18
 msgid "Go back to Forums"
-msgstr ""
-
-#: templates/forum.html:22 templates/forums.html:6 templates/forums.html:29
-#: templates/incnavbartop.html:3 templates/post.html:22
-#: templates/thread.html:23 templates/userposts.html:37
-msgid "Forums"
 msgstr ""
 
 #: templates/forum.html:28 templates/forums.html:36
 msgid "Threads"
 msgstr ""
 
-#: templates/forum.html:28 templates/forums.html:37 templates/thread.html:30
-#: templates/userposts.html:32
+#: templates/forum.html:28 templates/forums.html:37
+#: templates/incuserposts.html:3 templates/thread.html:30
 msgid "Posts"
 msgstr ""
 
@@ -717,8 +720,8 @@ msgid_plural "Maximum thread title length: %(length)s characters."
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/forum.html:76 templates/post.html:6 templates/post.html:29
-#: templates/post.html:73 templates/thread.html:79 templates/userposts.html:41
+#: templates/forum.html:76 templates/incuserposts.html:12 templates/post.html:6
+#: templates/post.html:29 templates/post.html:73 templates/thread.html:79
 msgid "Post"
 msgstr ""
 
@@ -758,9 +761,9 @@ msgstr ""
 msgid "date and time submitted UTC"
 msgstr ""
 
-#: templates/forum.html:100 templates/post.html:35 templates/post.html:96
-#: templates/thread.html:38 templates/thread.html:102
-#: templates/userposts.html:44
+#: templates/forum.html:100 templates/incuserposts.html:15
+#: templates/post.html:35 templates/post.html:96 templates/thread.html:38
+#: templates/thread.html:102
 msgid "permalink"
 msgstr ""
 
@@ -772,14 +775,14 @@ msgstr ""
 msgid "Please log in or create an account to start a new thread."
 msgstr ""
 
-#: templates/forum.html:121 templates/incnavbartop.html:10
+#: templates/forum.html:121 templates/incnavbartop.html:9
 #: templates/login.html:6 templates/login.html:43
 #: templates/passwordrecover.html:39 templates/post.html:121
 #: templates/register.html:39 templates/thread.html:122
 msgid "Log in"
 msgstr ""
 
-#: templates/forum.html:122 templates/incnavbartop.html:11
+#: templates/forum.html:122 templates/incnavbartop.html:10
 #: templates/login.html:48 templates/passwordrecover.html:40
 #: templates/post.html:122 templates/register.html:6 templates/register.html:34
 #: templates/thread.html:123
@@ -802,25 +805,54 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: templates/incnavbartop.html:7 templates/login.html:69
+#: templates/incnavbartop.html:6 templates/login.html:69
 #: templates/register.html:60
 msgid "Log out"
 msgstr ""
 
-#: templates/incnavbartop.html:8 templates/profile.html:15
+#: templates/incnavbartop.html:7 templates/profile.html:15
 msgid "Profile and settings"
 msgstr ""
 
-#: templates/incnavbartop.html:18
+#: templates/incnavbartop.html:17
 msgid "Languages"
 msgstr ""
 
-#: templates/incnavbartop.html:57
+#: templates/incnavbartop.html:56
 msgid "Logged in"
 msgstr ""
 
-#: templates/incnavbartop.html:61
+#: templates/incnavbartop.html:60
 msgid "Please set up your display name"
+msgstr ""
+
+#: templates/incproducts.html:3
+msgid "Products"
+msgstr ""
+
+#: templates/incuserposts.html:13 templates/post.html:33
+#: templates/thread.html:36
+msgid "posted"
+msgstr ""
+
+#: templates/incuserposts.html:14 templates/post.html:34
+#: templates/thread.html:37
+msgid "deleted"
+msgstr ""
+
+#: templates/incuserposts.html:14 templates/post.html:34
+#: templates/thread.html:37
+msgid "edited"
+msgstr ""
+
+#: templates/incuserposts.html:16 templates/post.html:36
+#: templates/thread.html:39
+msgid "edit"
+msgstr ""
+
+#: templates/incuserposts.html:17 templates/post.html:37
+#: templates/thread.html:40
+msgid "delete"
 msgstr ""
 
 #: templates/login.html:22
@@ -883,26 +915,6 @@ msgstr ""
 
 #: templates/passwordrecoverconfirm.html:32
 msgid "Save my password"
-msgstr ""
-
-#: templates/post.html:33 templates/thread.html:36 templates/userposts.html:42
-msgid "posted"
-msgstr ""
-
-#: templates/post.html:34 templates/thread.html:37 templates/userposts.html:43
-msgid "deleted"
-msgstr ""
-
-#: templates/post.html:34 templates/thread.html:37 templates/userposts.html:43
-msgid "edited"
-msgstr ""
-
-#: templates/post.html:36 templates/thread.html:39 templates/userposts.html:45
-msgid "edit"
-msgstr ""
-
-#: templates/post.html:37 templates/thread.html:40 templates/userposts.html:46
-msgid "delete"
 msgstr ""
 
 #: templates/post.html:52
@@ -979,6 +991,10 @@ msgstr ""
 
 #: templates/profile.html:45
 msgid "Remove"
+msgstr ""
+
+#: templates/profilepublic.html:6 templates/profilepublic.html:19
+msgid "User"
 msgstr ""
 
 #: templates/register.html:22
@@ -1081,9 +1097,5 @@ msgstr ""
 
 #: templates/thread.html:121
 msgid "Please log in or create an account to post an answer."
-msgstr ""
-
-#: templates/userposts.html:6 templates/userposts.html:25
-msgid "User"
 msgstr ""
 
