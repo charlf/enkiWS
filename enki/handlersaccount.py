@@ -108,7 +108,7 @@ class HandlerProfilePublic( enki.HandlerBase ):
 				display_name_data = enki.libdisplayname.get_display_name_data( int( useridnumber ))
 			else:
 				self.add_infomessage( 'info', MSG.INFORMATION(), MSG.USER_NOT_EXIST())
-			self.render_tmpl( 'userpublic.html',
+			self.render_tmpl( 'profilepublic.html',
 			                  active_page = 'home',
 			                  display_name_data = display_name_data )
 
